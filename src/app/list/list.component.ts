@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
   }
 
   public getPokemons(){
-    this.httpClient.get<any>('https://pokeapi.co/api/v2/pokemon/').subscribe(
+    this.httpClient.get<any>('https://pokeapi.co/api/v2/pokemon?limit=1118&offset=1').subscribe(
     response => {
       //console.log(response);
       console.log(response.results);
