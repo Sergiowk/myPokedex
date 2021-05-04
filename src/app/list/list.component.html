@@ -3,4 +3,9 @@
 <div class="container">
     
     <h1>Here you can find the full Pokemon list</h1>
+
+    <p *ngFor="let pokemon of pokemons">
+        {{pokemon.name}} {{pokemon.url}}
+
+    </p>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../services/pokemon.service';
-
+import { Pokemon } from '../models/pokemon';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-list',
@@ -8,15 +8,22 @@ import { PokemonService } from '../services/pokemon.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
-  constructor(public pokemonService:PokemonService) { }
+  pokemons: Pokemon[];
+  constructor(public httpClient: HttpClient) { }
 
 
   ngOnInit(): void {
-    this.getFullList();
+    this.getPokemons();
   }
 
-  getFullList(){
-    this.pokemonService.getPokemons();
+  public getPokemons(){
+    this.httpClient.get<any>('https://pokeapi.co/api/v2/pokemon/').subscribe(
+    response => {
+      //console.log(response);
+      console.log(response.results);
+      this.pokemons = response.results;  
+    }
+    
+  );
   }
 }
