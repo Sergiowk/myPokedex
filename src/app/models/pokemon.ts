@@ -1,5 +1,16 @@
 export class Pokemon{
     name!:string;
+    url!:string;
+
+    constructor(){
+        this.name = this.name;
+        this.url = this.url;
+    }
+}
+
+/*
+export class Pokemon{
+    name!:string;
     order!:number;
     weight!:string;
     abilities!:string[];
@@ -15,3 +26,4 @@ export class Pokemon{
         this.types = this.types;
     }
 }
+*/
