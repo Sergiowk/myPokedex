@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ListComponent } from './list/list.component';
+import { PokemonService } from './services/pokemon.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { ListComponent } from './list/list.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    PokemonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
